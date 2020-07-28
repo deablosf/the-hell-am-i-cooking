@@ -27,12 +27,12 @@ Every, like always.
 
 ### Timeframe/Schedule
 
-#####Today - get the search working and give ten result names and images per search. And try to finish the weather app.
+##### Today - get the search working and give ten result names and images per search. And try to finish the weather app.
 
-#####Tomorrow - when. You click on the result it will take you to the recipe.
+##### Tomorrow - when. You click on the result it will take you to the recipe.
 
-#####And The next day - figure out what the damned thing will look like.
+##### And The next day - figure out what the damned thing will look like.
 
-#####And the next - finish the site.
+##### And the next - finish the site.
 
-#####And another day - see if I can search for just the ingredients listed and nothing else.
+##### And another day - see if I can search for just the ingredients listed and nothing else.
