@@ -5,7 +5,7 @@ When all you know is what's in the frig
 # The Hell Am I Cooking?!
 
 ### Overview
-A site where you can search recipes by the ingredences youhave on hand.
+A site where you can search recipes by the ingredients you have on hand.
 
 ### What 3rd party API are you using
 Puppy recipes : http://www.recipepuppy.com/api/
@@ -23,7 +23,7 @@ format=xml : if you want xml instead of json
 I dont have one drawn. It'll have a search bar and output 10 choices with images. From there if you click the image it'll take you to the recipe.
 
 ### Expected roadblocks
-Every, like always.
+Everything, like always.
 
 ### Timeframe/Schedule
 
