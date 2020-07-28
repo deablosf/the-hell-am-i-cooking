@@ -9,18 +9,24 @@ A site where you can search recipes by the ingredients you have on hand.
 
 ### What 3rd party API are you using
 Puppy recipes : http://www.recipepuppy.com/api/
+
 For example:
+
 http://www.recipepuppy.com/api/?i=onions,garlic&q=omelet&p=3
 
 Optional Parameters:
+
 i : comma delimited ingredients
+
 q : normal search query
+
 p : page
+
 format=xml : if you want xml instead of json
 
 
 ### Wireframe
-I dont have one drawn. It'll have a search bar and output 10 choices with images. From there if you click the image it'll take you to the recipe.
+I dont have one drawn. It'll have a search bar and output 10 choices with images. From there if you click the image it'll take you to the recipe. Whither I can seperate this by eatibles and drinkibles is still up in the air.
 
 ### Expected roadblocks
 Everything, like always.
