@@ -16,7 +16,7 @@ class Ingredients extends Component {
     
 
     componentDidMount() {
-        axios.get("foody")
+        axios.get(foody)
         .then(responce => {
             this.setState({info: responce.data.results});
             // console.log(this.state.info)
