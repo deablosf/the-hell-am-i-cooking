@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 
-const foody = "http://www.recipepuppy.com/api/?i="
-
+let foody = "http://www.recipepuppy.com/api/?i="
+let searching = ""
 // axios.defaults.headers.common['Origin'] = 'http://localhost:3000'
 
 class Ingredients extends Component {
@@ -12,38 +12,47 @@ class Ingredients extends Component {
         this.state = {
             info: [],
             searchBar: "",
+            newSearch: "",
             formCompleted: false,
         }
 
     }
     
 
-    componentDidMount() {
-        axios.get(foody)
-        .then(response => {
-            this.setState({info: response.data.results});
-            // console.log(this.state.info)
-        })
-        .catch(error => {console.log(error)})
-    }
+    // componentDidMount() {
+    //     axios.get(foody)
+    //     .then(response => {
+    //         this.setState({info: response.data.results});
+    //         // console.log(this.state.info)
+    //     })
+    //     .catch(error => {console.log(error)})
+    // }
 
     onSearchChange = (event) => {
         this.setState({searchBar: event.target.value});
     }
 
+    searchForRecipes = (event) =>{
+        event.preventDefault()
+        foody = searching
+        axios.get(foody)
+        .then(response => {
+            this.setState({info: response.data.results});
+        })
+        .catch(error => {console.log(error)})
+    } 
+
     render() {
-        let a = this.state.searchBar.split(" ").join("") + "&p=2"
-        let b = "http://www.recipepuppy.com/api/?i=" + a
-        console.log(this.state.info)
+        let seaching = "http://www.recipepuppy.com/api/?i=" + this.state.searchBar.split(" ").join("") + "&p=2"
         return (
             <div>
                 <h3>Lets see what we have to work with</h3>
                 <form>
                     <input type="text" placeholder="onion,pepper,tomato" onChange={this.onSearchChange}  />
-                    <div> {a} </div>
-                    <div> {b} </div>
+                    <div> {seaching} </div>
+                    
 
-                    <button>Enter</button>
+                    <button onClick={this.searchForRecipes}>Enter</button>
                 </form>
 
                 {
