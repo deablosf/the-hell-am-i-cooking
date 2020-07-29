@@ -29,7 +29,20 @@ class Ingredients extends Component {
         return (
             <div>
                 
-                Can you see this?
+                <h3>Can you see this?</h3>
+
+                {
+                    this.state.info.map(foods => {
+                        return (
+                            <div>
+                                <h2> {foods.title} </h2>
+                                <img src={foods.thumbnail}/>
+                                <h3> Ingredents: {foods.ingredients} </h3>
+                                <h4> {foods.href} </h4>
+                            </div>
+                        )
+                    })
+                }
 
 
             </div>
