@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 
-const foody = "http://www.recipepuppy.com/api/"
+const foody = "http://www.recipepuppy.com/api/?i="
 
 // axios.defaults.headers.common['Origin'] = 'http://localhost:3000'
 
@@ -11,25 +11,40 @@ class Ingredients extends Component {
 
         this.state = {
             info: [],
+            searchBar: "",
+            formCompleted: false,
         }
+
     }
     
 
     componentDidMount() {
         axios.get(foody)
-        .then(responce => {
-            this.setState({info: responce.data.results});
+        .then(response => {
+            this.setState({info: response.data.results});
             // console.log(this.state.info)
         })
         .catch(error => {console.log(error)})
     }
 
+    onSearchChange = (event) => {
+        this.setState({searchBar: event.target.value});
+    }
+
     render() {
+        let a = this.state.searchBar.split(" ").join("") + "&p=2"
+        let b = "http://www.recipepuppy.com/api/?i=" + a
         console.log(this.state.info)
         return (
             <div>
-                
-                <h3>Can you see this?</h3>
+                <h3>Lets see what we have to work with</h3>
+                <form>
+                    <input type="text" placeholder="onion,pepper,tomato" onChange={this.onSearchChange}  />
+                    <div> {a} </div>
+                    <div> {b} </div>
+
+                    <button>Enter</button>
+                </form>
 
                 {
                     this.state.info.map(foods => {
