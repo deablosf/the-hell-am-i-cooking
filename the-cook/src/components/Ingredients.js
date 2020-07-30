@@ -2,8 +2,6 @@ import React, { Component } from 'react'
 import axios from 'axios'
 
 let foody = "http://www.recipepuppy.com/api/?i="
-let searched = ""
-// axios.defaults.headers.common['Origin'] = 'http://localhost:3000'
 
 class Ingredients extends Component {
     constructor(props) {
@@ -17,16 +15,6 @@ class Ingredients extends Component {
         }
 
     }
-    
-
-    // componentDidMount() {
-    //     axios.get(foody)
-    //     .then(response => {
-    //         this.setState({info: response.data.results});
-    //         // console.log(this.state.info)
-    //     })
-    //     .catch(error => {console.log(error)})
-    // }
 
     onSearchChange = (event) => {
         this.setState({searchBar: "http://www.recipepuppy.com/api/?i=" + event.target.value.split(" ").join("") + "&p=2"});
