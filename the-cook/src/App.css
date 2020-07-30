@@ -1,0 +1,32 @@
+.App-header{
+    height: 35vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(./components/assets/inside_frig.png);
+    background-color: maroon;
+    background-blend-mode: darken;
+    background-position-x: -1vh;
+    background-position-y: -20vh;
+    color: dimgrey;
+    font-size: 20px;
+}
+
+
+/* ----------------------------------
+-------- Ingredients -------------
+---------------------------------- */
+
+.mainSearch{
+    border: solid;
+    width: 100vw;
+    background-color: seashell;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.searchBar{
+    width: 25vw;
+}

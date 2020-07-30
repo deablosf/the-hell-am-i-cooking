@@ -42,26 +42,28 @@ class Ingredients extends Component {
     } 
 
     render() {
-        let seaching = "http://www.recipepuppy.com/api/?i=" + this.state.searchBar.split(" ").join("") + "&p=2"
+        let seaching = this.state.searchBar.split(" ").join("") + "&p=2"
         return (
-            <div>
-                <h3>Lets see what we have to work with</h3>
+            <div className="mainSearch">
+                <h2>So ... What are we working with?</h2>
                 <form>
-                    <input type="text" placeholder="onion,pepper,tomato" onChange={this.onSearchChange}  />
-                    <div> {seaching} </div>
+                    <label>Ingredents: </label>
+                    <input className="searchBar" type="text" placeholder="onion, pepper, tomato, no plurals" onChange={this.onSearchChange}  />
+                    <div> Commas, between, items {seaching} </div>
                     
 
-                    <button onClick={this.searchForRecipes}>Enter</button>
+                    <button onClick={this.searchForRecipes}>Spin the Wheel Raggedy Man</button>
                 </form>
 
                 {
                     this.state.info.map(foods => {
                         return (
                             <div>
-                                <h2> {foods.title} </h2>
-                                <img src={foods.thumbnail}/>
+                                <a href={foods.href}> <img src={foods.thumbnail}/> </a>
+                                
+                                <h2> <a href={foods.href}>{foods.title}</a> </h2>
+                                
                                 <h3> Ingredents: {foods.ingredients} </h3>
-                                <h4> {foods.href} </h4>
                             </div>
                         )
                     })

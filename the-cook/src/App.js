@@ -6,9 +6,11 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Here we go again</h1>
-        <Ingredients />
+        <h1>The Hell Am I Cooking?!</h1>
+        <h2>When takeout's a No Go</h2>
+        
       </header>
+      <Ingredients />
     </div>
   );
 }
