@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 
 let foody = "http://www.recipepuppy.com/api/?i="
-let searching = ""
+let searched = ""
 // axios.defaults.headers.common['Origin'] = 'http://localhost:3000'
 
 class Ingredients extends Component {
@@ -12,7 +12,7 @@ class Ingredients extends Component {
         this.state = {
             info: [],
             searchBar: "",
-            newSearch: "",
+            searchHistory: [],
             formCompleted: false,
         }
 
@@ -29,13 +29,12 @@ class Ingredients extends Component {
     // }
 
     onSearchChange = (event) => {
-        this.setState({searchBar: event.target.value});
+        this.setState({searchBar: "http://www.recipepuppy.com/api/?i=" + event.target.value.split(" ").join("") + "&p=2"});
     }
 
     searchForRecipes = (event) =>{
         event.preventDefault()
-        foody = searching
-        axios.get(foody)
+        axios.get(this.state.searchBar)
         .then(response => {
             this.setState({info: response.data.results});
         })
