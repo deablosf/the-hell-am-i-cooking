@@ -12,15 +12,16 @@ import {
 
 function App() {
   return (
+    <div>
     <Router>
       <div>
       <header className="App-header">
       <h1>The Hell Am I Cooking?!</h1>
         <h2>When takeout's a No Go</h2>
         <div className="linkin">
-          <div><Link to="/ingred">By Ingredients</Link></div>
-          <div><Link to="/name">By Name</Link></div>
-          <div><Link to="/buttons">See what Could Be</Link></div>
+          <div className="topLinks"><Link to="/ingred">By Ingredients</Link></div>
+          <div className="topLinks"><Link to="/name">By Dish</Link></div>
+          <div className="topLinks"><Link to="/buttons">See what Could Be</Link></div>
         </div>
 
         </header>
@@ -42,7 +43,15 @@ function App() {
         </Switch> 
       </div>
     </Router>
+ 
+    <div className="footer">
+    <p>powered by puppyrecipe</p>
+            <p>Built by Sam</p>
+    </div>
 
+
+
+  </div>
   );
 }
 

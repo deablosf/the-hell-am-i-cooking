@@ -35,7 +35,7 @@ class Ingredients extends Component {
             <div className="mainSearch">
                 <h2>So ... What are we working with?</h2>
                 <form>
-                    <label>Ingredents: </label>
+                    <label> By Ingredents: </label>
                     <input className="searchBar" type="text" placeholder="onion, pepper, tomato, no plurals" onChange={this.onSearchChange}  />
                     <div> Commas, between, items {seaching} </div>
                     

@@ -9,10 +9,30 @@
     background-blend-mode: darken;
     background-position-x: -1vh;
     background-position-y: -20vh;
-    color: dimgrey;
+    color: antiquewhite;
     font-size: 20px;
 }
 
+.linkin{
+    width: 50vw;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 18px;
+}
+
+a:link.topLinks{
+    text-decoration: none;
+    color: antiquewhite;
+  }
+  
+  a:visited {
+    color: antiquewhite;
+  }
+
+  a:hover{
+    font-weight: 900;
+    color: steelblue;
+  }
 
 /* ----------------------------------
 -------- Ingredients -------------
@@ -25,8 +45,27 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: steelblue;
+    padding-bottom: 10vh;
+    padding-top: 7vh;
 }
 
 .searchBar{
     width: 25vw;
+}
+
+
+/* -------------------------------------
+-------------- Footer ---------------
+------------------------------------- */
+
+.footer{
+    width: 100vw;
+    height: 25vh;
+    background-color: steelblue;
+    font-size: 14px;
+    color: maroon;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }
