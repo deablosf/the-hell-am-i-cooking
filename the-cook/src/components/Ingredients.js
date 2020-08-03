@@ -37,7 +37,7 @@ class Ingredients extends Component {
                 <form>
                     <label> By Ingredents: </label>
                     <input className="searchBar" type="text" placeholder="onion, pepper, tomato, no plurals" onChange={this.onSearchChange}  />
-                    <div> Commas, between, items {seaching} </div>
+                    <div> Commas, between, items </div>
                     
 
                     <button onClick={this.searchForRecipes}>Spin the Wheel Raggedy Man</button>

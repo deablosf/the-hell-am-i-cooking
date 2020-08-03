@@ -37,7 +37,7 @@ class Names extends Component {
                 <form>
                     <label>By Dish: </label>
                     <input className="searchBar" type="text" placeholder="Omelet, pancake or stew even!" onChange={this.onSearchChange}  />
-                    <div> One Name at a time Please {seaching} </div>
+                    <div> One Name at a time Please</div>
                     
 
                     <button onClick={this.searchForRecipes}>Give me Somehting Tasty</button>
