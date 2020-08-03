@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, useState } from 'react'
 import axios from 'axios'
 
 let foody = "http://www.recipepuppy.com/api/?i="
@@ -18,6 +18,7 @@ class Buttons extends Component {
 
     onSearchChange = (event) => {
         this.setState({searchBar: "http://www.recipepuppy.com/api/?i=" + event.target.value + "&p=2"});
+
     }
 
     searchForRecipes = (event) =>{
@@ -30,7 +31,6 @@ class Buttons extends Component {
     } 
 
     render() {
-        let seaching = this.state.searchBar.split(" ").join("") + "&p=2"
         return (
             <div className="mainSearch">
                 <h2>Pick Your Poisons</h2>

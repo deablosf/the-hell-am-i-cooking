@@ -11,13 +11,14 @@ class Names extends Component {
             info: [],
             searchBar: "",
             searchHistory: [],
+            page: 2,
             formCompleted: false,
         }
 
     }
 
     onSearchChange = (event) => {
-        this.setState({searchBar: "http://www.recipepuppy.com/api/?q=" + event.target.value.split(" ").join("") + "&p=2"});
+        this.setState({searchBar: "http://www.recipepuppy.com/api/?q=" + event.target.value.split(" ").join("") + "&p=" + this.state.page});
     }
 
     searchForRecipes = (event) =>{
