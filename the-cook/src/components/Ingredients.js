@@ -30,7 +30,6 @@ class Ingredients extends Component {
     } 
 
     render() {
-        let seaching = this.state.searchBar.split(" ").join("") + "&p=2"
         return (
             <div className="mainSearch">
                 <h2>So ... What are we working with?</h2>
