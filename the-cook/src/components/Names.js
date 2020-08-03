@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 
-let foody = "http://www.recipepuppy.com/api/?q="
 
 class Names extends Component {
     constructor(props) {
@@ -30,15 +29,22 @@ class Names extends Component {
         .catch(error => {console.log(error)})
     } 
 
+    nextPage(event) {
+        this.setState({page: this.state.page +1});
+      }
+      
+      previousPage(event) {
+        this.setState({page: this.state.page -1});
+      }
+
     render() {
-        let seaching = this.state.searchBar.split(" ").join("") + "&p=2"
         return (
             <div className="mainSearch">
                 <h2>What's NOODLING around the old Grey Matter?!</h2>
                 <form>
                     <label>By Dish: </label>
                     <input className="searchBar" type="text" placeholder="Omelet, pancake or stew even!" onChange={this.onSearchChange}  />
-                    <div> One Name at a time Please</div>
+                    <div> One Name at a time Please  {this.state.searchBar}</div>
                     
 
                     <button onClick={this.searchForRecipes}>Give me Somehting Tasty</button>
@@ -53,11 +59,16 @@ class Names extends Component {
                                 <h2> <a href={foods.href}>{foods.title}</a> </h2>
                                 
                                 <h3> Ingredents: {foods.ingredients} </h3>
+                                
                             </div>
                         )
                     })
                 }
-
+                {/* <div className="pageTurners">
+                <button onClick={() => this.previousPage()}>Previous</button>
+                {this.state.page-1}
+                <button onClick={() => this.nextPage()}>Next</button>
+                </div> */}
 
             </div>
         )
