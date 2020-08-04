@@ -112,3 +112,17 @@ button{
     align-items: center;
     justify-content: space-evenly;
 }
+
+a.footerLinks{
+  text-decoration: none;
+  color: maroon;
+}
+
+a:visited.footerLinks {
+  color: maroon;
+}
+
+a:hover.footerLinks {
+  font-weight: 900;
+  color: antiquewhite;
+}

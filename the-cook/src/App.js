@@ -45,8 +45,8 @@ function App() {
     </Router>
  
     <div className="footer">
-    <p>powered by puppyrecipe</p>
-            <p>Built by Sam</p>
+    <p> <a className="footerLinks" href="http://www.recipepuppy.com/">powered by puppyrecipe</a></p>
+            <p><a className="footerLinks" href="https://github.com/deablosf">Built by Sam</a></p>
     </div>
 
 
