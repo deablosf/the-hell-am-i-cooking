@@ -54,6 +54,20 @@ a:link.topLinks{
     width: 25vw;
 }
 
+a:link.foodNames {
+  text-decoration: none;
+    color: steelblue;
+}
+
+a:visited.foodNames {
+  color: steelblue;
+}
+
+a:hover.foodNames {
+  font-weight: 900;
+  color: maroon;
+}
+
 /* ----------------------------------
 -------- Forms -------------
 ---------------------------------- */
@@ -67,12 +81,23 @@ button{
 }
 
 
-.pageTurners{
+.fullReadOut{
   display: flex;
+  margin-bottom: 8vh;
+}
+
+.ingred{
+  width: 55vw;
+}
+
+.foodTitles{
+  width: 55vw;
 }
 
 
-
+/* .pageTurners{
+  display: flex;
+} */
 /* -------------------------------------
 -------------- Footer ---------------
 ------------------------------------- */

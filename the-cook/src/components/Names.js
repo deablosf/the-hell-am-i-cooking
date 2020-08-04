@@ -8,16 +8,21 @@ class Names extends Component {
 
         this.state = {
             info: [],
+            info2: [],
+            info3: [],
             searchBar: "",
+            searchBar2: "",
+            searchBar3: "",
             searchHistory: [],
-            page: 2,
             formCompleted: false,
         }
 
     }
 
     onSearchChange = (event) => {
-        this.setState({searchBar: "http://www.recipepuppy.com/api/?q=" + event.target.value.split(" ").join("") + "&p=" + this.state.page});
+        this.setState({searchBar: "http://www.recipepuppy.com/api/?q=" + event.target.value.split(" ").join("") + "&p=2"});
+        this.setState({searchBar2: "http://www.recipepuppy.com/api/?q=" + event.target.value.split(" ").join("") + "&p=3"});
+        this.setState({searchBar3: "http://www.recipepuppy.com/api/?q=" + event.target.value.split(" ").join("") + "&p=4"});
     }
 
     searchForRecipes = (event) =>{
@@ -26,16 +31,24 @@ class Names extends Component {
         .then(response => {
             this.setState({info: response.data.results});
         })
+        axios.get(this.state.searchBar2)
+        .then(response => {
+            this.setState({info2: response.data.results});
+        })
+        axios.get(this.state.searchBar3)
+        .then(response => {
+            this.setState({info3: response.data.results});
+        })
         .catch(error => {console.log(error)})
     } 
 
-    nextPage(event) {
-        this.setState({page: this.state.page +1});
-      }
+    // nextPage(event) {
+    //     this.setState({page: this.state.page +1});
+    //   }
       
-      previousPage(event) {
-        this.setState({page: this.state.page -1});
-      }
+    //   previousPage(event) {
+    //     this.setState({page: this.state.page -1});
+    //   }
 
     render() {
         return (
@@ -53,23 +66,53 @@ class Names extends Component {
                 {
                     this.state.info.map(foods => {
                         return (
-                            <div>
+                            <div className="fullReadOut">
                                 <a href={foods.href}> <img src={foods.thumbnail}/> </a>
                                 
-                                <h2> <a href={foods.href}>{foods.title}</a> </h2>
-                                
-                                <h3> Ingredents: {foods.ingredients} </h3>
-                                
+                                <div className="details">
+                                    <h2 className="foodTitles"> <a className="foodNames" href={foods.href}>{foods.title}</a> </h2>
+                                    
+                                    <h3 className="ingred"> Ingredents: {foods.ingredients} </h3>
+                                </div>
+
                             </div>
                         )
                     })
                 }
-                {/* <div className="pageTurners">
-                <button onClick={() => this.previousPage()}>Previous</button>
-                {this.state.page-1}
-                <button onClick={() => this.nextPage()}>Next</button>
-                </div> */}
+                
+                {
+                    this.state.info2.map(foods => {
+                        return (
+                            <div className="fullReadOut">
+                                <a href={foods.href}> <img src={foods.thumbnail}/> </a>
+                                
+                                <div className="details">
+                                    <h2 className="foodTitles"> <a className="foodNames" href={foods.href}>{foods.title}</a> </h2>
+                                    
+                                    <h3 className="ingred"> Ingredents: {foods.ingredients} </h3>
+                                </div>
 
+                            </div>
+                        )
+                    })
+                }
+
+                {
+                    this.state.info3.map(foods => {
+                        return (
+                            <div className="fullReadOut">
+                                <a href={foods.href}> <img src={foods.thumbnail}/> </a>
+                                
+                                <div className="details">
+                                    <h2 className="foodTitles"> <a className="foodNames" href={foods.href}>{foods.title}</a> </h2>
+                                    
+                                    <h3 className="ingred"> Ingredents: {foods.ingredients} </h3>
+                                </div>
+
+                            </div>
+                        )
+                    })
+                }
             </div>
         )
     }

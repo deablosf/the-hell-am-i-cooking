@@ -9,7 +9,11 @@ class Buttons extends Component {
 
         this.state = {
             info: [],
+            info2: [],
+            info3: [],
             searchBar: "",
+            searchBar2: "",
+            searchBar3: "",
             searchHistory: [],
             formCompleted: false,
         }
@@ -18,6 +22,8 @@ class Buttons extends Component {
 
     onSearchChange = (event) => {
         this.setState({searchBar: "http://www.recipepuppy.com/api/?i=" + event.target.value + "&p=2"});
+        this.setState({searchBar2: "http://www.recipepuppy.com/api/?i=" + event.target.value + "&p=3"});
+        this.setState({searchBar3: "http://www.recipepuppy.com/api/?i=" + event.target.value + "&p=4"});
 
     }
 
@@ -27,6 +33,15 @@ class Buttons extends Component {
         .then(response => {
             this.setState({info: response.data.results});
         })
+        axios.get(this.state.searchBar2)
+        .then(response => {
+            this.setState({info2: response.data.results});
+        })
+        axios.get(this.state.searchBar3)
+        .then(response => {
+            this.setState({info3: response.data.results});
+        })
+
         .catch(error => {console.log(error)})
     } 
 
@@ -102,18 +117,53 @@ class Buttons extends Component {
                 {
                     this.state.info.map(foods => {
                         return (
-                            <div>
+                            <div className="fullReadOut">
                                 <a href={foods.href}> <img src={foods.thumbnail}/> </a>
                                 
-                                <h2> <a href={foods.href}>{foods.title}</a> </h2>
+                                <div className="details">
+                                    <h2 className="foodTitles"> <a className="foodNames" href={foods.href}>{foods.title}</a> </h2>
+                                    
+                                    <h3 className="ingred"> Ingredents: {foods.ingredients} </h3>
+                                </div>
+
+                            </div>
+                        )
+                    })
+                }
+                
+                {
+                    this.state.info2.map(foods => {
+                        return (
+                            <div className="fullReadOut">
+                                <a href={foods.href}> <img src={foods.thumbnail}/> </a>
                                 
-                                <h3> Ingredents: {foods.ingredients} </h3>
+                                <div className="details">
+                                    <h2 className="foodTitles"> <a className="foodNames" href={foods.href}>{foods.title}</a> </h2>
+                                    
+                                    <h3 className="ingred"> Ingredents: {foods.ingredients} </h3>
+                                </div>
+
                             </div>
                         )
                     })
                 }
 
+                {
+                    this.state.info3.map(foods => {
+                        return (
+                            <div className="fullReadOut">
+                                <a href={foods.href}> <img src={foods.thumbnail}/> </a>
+                                
+                                <div className="details">
+                                    <h2 className="foodTitles"> <a className="foodNames" href={foods.href}>{foods.title}</a> </h2>
+                                    
+                                    <h3 className="ingred"> Ingredents: {foods.ingredients} </h3>
+                                </div>
 
+                            </div>
+                        )
+                    })
+                }
             </div>
         )
     }
